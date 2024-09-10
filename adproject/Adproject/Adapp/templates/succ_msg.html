@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Social Network Ad Classification </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Age:{{data_age}}</p>
+      <p>EstimatedSalary:{{data_es}}</p>
+      <p>Gender_Male:{{data_gm}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>Probability to purchase is high</p>
+      {% else %}
+        <p>Probability purchase is low</p>
+
+      {% endif %}
+
+    <a  href="{% url 'AdApp:Ad' %}">Ad Predicition</a>
+    <br>
+</div>
+{% endblock %}
